@@ -15,9 +15,12 @@ public class HangMan {
         String possibleWord = LoadData.loadWords();
         int m[] = new int[26];
         int meh[] = new int[1];
-        meh[0] = Integer.parseInt(possibleWord.substring(possibleWord.lastIndexOf("\n") + 1));
+        
+       if (possibleWord != null) {
+            meh[0] = Integer.parseInt(possibleWord.substring(possibleWord.lastIndexOf("\n") + 1));
 
-        possibleWord = possibleWord.substring(0, possibleWord.lastIndexOf("\n"));
+            possibleWord = possibleWord.substring(0, possibleWord.lastIndexOf("\n"));
+        }
 
         if (possibleWord != null) {
             while (ProcessData.howManyWords(possibleWord) > 1 && meh[0] > 0) {
